@@ -1,2 +1,11 @@
-# dp-GAN
-Diﬀerentially Private Generative Adversarial Networks for Time Series, Continuous, and Discrete Open Data
+# Adult dataset
+Because of the aim of having a reliable benchmark where to compare our results we analyzed the performances of our model on the UCI adult dataset: this dataset is an extract of the US census and contains information about working adults, distributed across 14 features. Records are classified depending on whether the individual earns more or less than 50k dollars each year/the individual's yearly income (more or less than 50k dollars). This dataset has been used extensively by many other applications that targeted differential privacy and, therefore, it constitutes a good test for our work. It is composed by 14 features that represent the characteristics of several US workers and an additional column that classifies records based on their yearly income (specifically, whether a person earns more than 50K dollars each year or not). In order to test our application, we removed all the non-categorical features to better analyze the bahaviour of our model on this kind of data. Moreover, to be able to use accuracy as an evaluation metric, we decided to sample the training and test data in such a way that both classes would be balanced. Although our objective was guaranteeing privacy we need to verify that the released data still mantain some of their utility. To do so, we test our dp-GAN in a classification task. In particular we anonymized the training dataset through our dp-GAN model and then built a random forest classifier on the generated dataset. We evaluate the accuracy on the test set and compare it with the one of the model built on the real non-anonymized dataset. If the dp-GAN model behaves correctly all the correlations between the different features should be preserved and therefore the final accuracy should be similar to what was achieved in by using the real training set. We also tracked the privacy costs to verify that the generated data were correctly anonymized. Finally, we examined how much membership inference attacks can influence our model and compared it to a non-anonymized GAN model.
+
+![Alt text](original.png?raw=true "Title")
+original data distribution
+![Alt text](GAN.png?raw=true "Title")
+data distribution using GAN
+![Alt text](dp-GAN.png?raw=true "Title")
+data distribution using dp-GAN with epsilon = 3
+For example the fact that a doctorate guarantees higher incomes is preserved. Similarly, the inequality between black women and white men is still visible.
+This highlights that GAN and dp-GAN are able to model the joint distribution p(x,y) and use it to generate new data.
