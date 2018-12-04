@@ -1,2 +1,6 @@
-# dp-GAN
-Diﬀerentially Private Generative Adversarial Networks for Time Series, Continuous, and Discrete Open Data
+# Clipping Decay
+In order to test our model on a fully discrete scenario in which analyse the effects of differential privacy and clipping decay more easily we adopted a simple but at the same time interesting dataset, the UCI mushrooms dataset. This dataset is composed by 22 categoriacal features such as odor or habitat and can be used in a classiﬁcation task. The classiﬁcation task consists of classifying each mushroom in two different categories: edible or poisonous. Given the dataset, we split it in training set and test set and we anonymized it computing the accuracy using different levels of privacy as already done for the UCI adult dataset. 
+
+![Alt text](accuracy_mushrooms.png?raw=true "Title")
+
+The figure shows the effects of differential privacy on the classiﬁcation. It is clear that also the model using differential privacy with clipping decay can reach comparable results as the non-anonymized GAN; however it requires more time to converge due to the addition of noise. On the contrary, the dp-GAN without clipping decay is able to reach similar but not equal results. Indeed, cliiping decay slows down the training at the beginning, but in the long term it is able to obtain better results. The two dp-GAN use the same amount of privacy (because they use the same σ = 7) and the only difference is the capacity of the noise to adapt to the different stages of the training.
