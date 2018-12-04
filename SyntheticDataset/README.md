@@ -2,7 +2,7 @@
 In order to provide a ﬁrst evaluation of the performance of the dp-GAN and to understand the eﬀects of diﬀerential privacy, we conducted the ﬁrst experiment on a synthetic dataset we created. The dataset is constituted by samples coming from 6 two-dimensional gaussian distributions with the same variance, but diﬀerent centres. We checked how eﬀectively a GAN model could replicate the distributions and how diﬀerent the results are when diﬀerential privacy is deployed. In addition to a visual assessment, we veriﬁed the quality of the models through the Wasserstein distance, a measure that judges the distance between the real distribution and the generated one. For the non-anonymized GAN, we used Adam also to train the discriminator instead of the dp-SGD. 
 
 ![Alt text](synthetic_real.png?raw=true "Title")
-![Alt text](synthetic_Adam?raw=true "Title")
+![Alt text](synthetic_Adam.png?raw=true "Title")
 ![Alt text](synthetic_dp.png?raw=true "Title")
 The figures show visually the quality of the results using anonymization. The results are similar in both the marginals and joint distributions. What we plot is the kernel density estimation of the data to visualize the bivariate distribution. As expected diﬀerentially privacy introduces a small noise in the results increasing the variance of the six gaussian distributions but it still replicates the original distribution faithfully. In addition, the Wasserstein distance evidences the overall quality of the outputs using diﬀerent levels of privacy. 
 ![Alt text](synthetic_was.png?raw=true "Title")
