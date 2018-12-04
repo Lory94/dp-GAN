@@ -20,4 +20,4 @@ data distribution using dp-GAN with epsilon = 3
 For example the fact that a doctorate guarantees higher incomes is preserved. Similarly, the inequality between black women and white men is still visible.
 This highlights that GAN and dp-GAN are able to model the joint distribution p(x,y) and use it to generate new data.
 
-![Alt text](params.png?raw=true "Title")
+![Alt text](params.JPG?raw=true "Title")
